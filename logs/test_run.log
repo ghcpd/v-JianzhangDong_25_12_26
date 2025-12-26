@@ -1,0 +1,71 @@
+Test Run Results:
+==================================================
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-9.0.2, pluggy-1.6.0 -- D:\projects\v-JianzhangDong_25_12_26\grok-fast\v-JianzhangDong_25_12_26\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: D:\projects\v-JianzhangDong_25_12_26\grok-fast\v-JianzhangDong_25_12_26
+collecting ... collected 34 items
+
+tests/test_auth.py::TestAuth::test_invalid_token PASSED                  [  2%]
+tests/test_auth.py::TestAuth::test_missing_token PASSED                  [  5%]
+tests/test_auth.py::TestAuth::test_valid_token PASSED                    [  8%]
+tests/test_config.py::TestConfig::test_default_env PASSED                [ 11%]
+tests/test_config.py::TestConfig::test_is_production PASSED              [ 14%]
+tests/test_discount.py::test_apply_discount_vip PASSED                   [ 17%]
+tests/test_discount.py::test_apply_discount_staff PASSED                 [ 20%]
+tests/test_discount.py::test_apply_discount_regular PASSED               [ 23%]
+tests/test_errors.py::test_app_error PASSED                              [ 26%]
+tests/test_errors.py::test_auth_error PASSED                             [ 29%]
+tests/test_errors.py::test_validation_error PASSED                       [ 32%]
+tests/test_errors.py::test_repository_error PASSED                       [ 35%]
+tests/test_logger.py::TestLogger::test_get_logger_returns_instance PASSED [ 38%]
+tests/test_logger.py::TestLogger::test_get_logger_same_instance PASSED   [ 41%]
+tests/test_order_service.py::TestOrderService::test_create_and_get_order PASSED [ 44%]
+tests/test_order_service.py::TestOrderService::test_create_order_invalid_price PASSED [ 47%]
+tests/test_permissions.py::test_has_permission_admin PASSED              [ 50%]
+tests/test_permissions.py::test_has_permission_user_read PASSED          [ 52%]
+tests/test_permissions.py::test_has_permission_user_write PASSED         [ 55%]
+tests/test_permissions.py::test_has_permission_guest PASSED              [ 58%]
+tests/test_pricing.py::TestPricing::test_negative_price PASSED           [ 61%]
+tests/test_pricing.py::TestPricing::test_no_discount PASSED              [ 64%]
+tests/test_pricing.py::TestPricing::test_staff_discount PASSED           [ 67%]
+tests/test_pricing.py::TestPricing::test_vip_discount PASSED             [ 70%]
+tests/test_repository.py::TestRepository::test_get_missing_key PASSED    [ 73%]
+tests/test_repository.py::TestRepository::test_save_and_get PASSED       [ 76%]
+tests/test_user_service.py::TestUserService::test_create_and_get_user PASSED [ 79%]
+tests/test_user_service.py::TestUserService::test_create_user_invalid_email PASSED [ 82%]
+tests/test_utils.py::test_utc_now_iso PASSED                             [ 85%]
+tests/test_utils.py::test_normalize_email PASSED                         [ 88%]
+tests/test_validators.py::TestValidators::test_validate_email_invalid PASSED [ 91%]
+tests/test_validators.py::TestValidators::test_validate_email_success PASSED [ 94%]
+tests/test_validators.py::TestValidators::test_validate_positive_int PASSED [ 97%]
+tests/test_validators.py::TestValidators::test_validate_positive_int_invalid PASSED [100%]
+
+============================== warnings summary ===============================
+tests/test_utils.py::test_utc_now_iso
+  D:\projects\v-JianzhangDong_25_12_26\grok-fast\v-JianzhangDong_25_12_26\app\utils.py:4: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    return datetime.utcnow().isoformat()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 34 passed, 1 warning in 0.11s ========================
+
+
+Coverage Report:
+==================================================
+Name                   Stmts   Miss  Cover
+------------------------------------------
+app\__init__.py            1      0   100%
+app\auth.py                5      0   100%
+app\config.py              8      1    88%
+app\discount.py            6      0   100%
+app\errors.py              7      0   100%
+app\logger.py             12      0   100%
+app\order_service.py      12      0   100%
+app\permissions.py         6      0   100%
+app\pricing.py             6      0   100%
+app\repository.py         13      1    92%
+app\user_service.py       10      0   100%
+app\utils.py               5      0   100%
+app\validators.py         10      0   100%
+------------------------------------------
+TOTAL                    101      2    98%
