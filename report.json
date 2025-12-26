@@ -1,0 +1,28 @@
+{
+  "problems": [
+    {
+      "id": "1",
+      "module_name": "discount",
+      "file": "app/discount.py",
+      "test_file": "tests/test_discount.py"
+    },
+    {
+      "id": "2",
+      "module_name": "errors",
+      "file": "app/errors.py",
+      "test_file": "tests/test_errors.py"
+    },
+    {
+      "id": "3",
+      "module_name": "permissions",
+      "file": "app/permissions.py",
+      "test_file": "tests/test_permissions.py"
+    },
+    {
+      "id": "4",
+      "module_name": "utils",
+      "file": "app/utils.py",
+      "test_file": "tests/test_utils.py"
+    }
+  ]
+}
