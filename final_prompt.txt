@@ -1,0 +1,177 @@
+【Role & Objective】
+You are an experienced test engineer. Your task is to generate comprehensive tests for a Python project, create automation scripts, documentation, and execute the complete test suite with coverage analysis.
+
+【Inputs & Context】
+- Target project: Python project with source code in the `app/` directory
+- Existing tests: Located in the `tests/` directory
+- Test framework: pytest
+- Coverage tool: coverage.py
+- Source modules to analyze: All Python modules in the `app/` directory
+- Existing test files: All test_*.py files in the `tests/` directory
+
+【Step-by-Step Instructions】
+
+Step 1: Detect Untested Modules
+- Scan all Python modules in the `app/` directory
+- Identify modules that do not have corresponding test files in the `tests/` directory
+- A module is considered tested if a test file with naming pattern `test_<module_name>.py` exists
+
+Step 2: Generate Test Files for Untested Modules
+For each untested module identified in Step 1:
+- Read and analyze the source code of the untested module
+- Generate a comprehensive test file named `test_<module_name>.py`
+- Include test cases covering:
+  * All public functions and methods
+  * All classes and their methods
+  * Edge cases and boundary conditions
+  * Error handling scenarios
+  * Normal operation paths
+- Use pytest framework conventions
+- Follow existing test file patterns in the project
+- Save each test file in the `tests/` directory
+- Ensure each test file has a unique name
+
+Step 3: Generate report.json
+Create a `report.json` file in the project root directory with the following structure:
+```json
+{
+  "problems": [
+    {
+      "id": "1",
+      "module_name": "example_module_1",
+      "file": "example_module_1.py",
+      "test_file": "test_example_module_1.py"
+    },
+    {
+      "id": "2",
+      "module_name": "example_module_2",
+      "file": "example_module_2.py",
+      "test_file": "test_example_module_2.py"
+    }
+  ]
+}
+```
+- List all untested modules that were identified
+- Provide sequential numeric IDs starting from "1"
+- Include the module name, source file name, and generated test file name for each entry
+
+Step 4: Generate auto_test.py
+Create an `auto_test.py` file in the project root directory that:
+- Discovers and runs all test files under the `tests/` directory using pytest
+- Calculates test coverage using coverage.py
+- CRITICAL: Coverage measurement must ONLY target the original source code directory (e.g., `app/`)
+- CRITICAL: Explicitly EXCLUDE the `tests/` directory from coverage measurement
+- The coverage target should be the main project source directory, NOT the test code itself
+- Generates coverage reports in both terminal output and HTML format
+- Creates the `logs/` directory if it does not exist
+- Writes comprehensive test results and coverage metrics to `logs/test_run.log`
+- Includes error handling and proper exit codes
+- Provides clear console output showing test progress and results
+
+Step 5: Generate README.md
+Create a `README.md` file in the project root directory that includes:
+- Project overview and purpose
+- Complete list of all generated files with descriptions
+- Detailed explanation of each test file and what it covers
+- Instructions on how to run `auto_test.py`
+- Instructions on how to check coverage logs in `logs/test_run.log`
+- Instructions on how to view HTML coverage reports
+- Project structure diagram showing the organization of files
+- Test statistics (number of test files, total test cases)
+- Troubleshooting guide for common issues
+- Requirements and dependencies section
+
+Step 6: Execute auto_test.py
+- Run the generated `auto_test.py` script
+- Monitor execution for any test failures
+- If test failures occur, analyze the failures and fix the test code to match the actual behavior of the source code
+- Re-run tests until all tests pass successfully
+- Verify that coverage reports are generated correctly
+- Confirm that `logs/test_run.log` contains the complete test results
+
+【Output Specification】
+
+1. Test Files (in `tests/` directory):
+   - Filename format: `test_<module_name>.py`
+   - Must include comprehensive test coverage
+   - Must use pytest conventions
+   - Must follow existing project test patterns
+
+2. report.json (in project root):
+   - Valid JSON format
+   - Contains "problems" array with all untested modules
+   - Each entry has: id, module_name, file, test_file
+
+3. auto_test.py (in project root):
+   - Executable Python script
+   - Uses pytest for test discovery and execution
+   - Uses coverage.py for coverage measurement
+   - Excludes tests/ directory from coverage
+   - Targets app/ directory for coverage
+   - Creates logs/ directory automatically
+   - Writes to logs/test_run.log
+
+4. README.md (in project root):
+   - Markdown format
+   - Complete documentation of all generated files
+   - Clear usage instructions
+   - Project structure overview
+   - Test statistics
+
+5. Test Execution Results:
+   - All tests must pass (0 failures)
+   - Coverage report generated in htmlcov/
+   - Test log written to logs/test_run.log
+   - Console output showing test results and coverage percentage
+
+【Constraints & Preferences】
+
+Code Quality:
+- Follow PEP 8 Python style guidelines
+- Write clear, readable, and maintainable test code
+- Include docstrings for test functions
+- Use descriptive test names that explain what is being tested
+
+Test Coverage:
+- Aim for high code coverage (ideally 95%+ on tested modules)
+- Cover all branches and edge cases
+- Include both positive and negative test cases
+- Test error conditions and exception handling
+
+Coverage Measurement:
+- MUST exclude tests/ directory from coverage calculation
+- MUST target only app/ or main source directory
+- Coverage reports should reflect source code coverage only, not test code coverage
+
+Automation:
+- auto_test.py must be fully automated with no manual intervention required
+- Must handle directory creation automatically
+- Must provide clear, informative output
+
+Documentation:
+- README.md must be comprehensive and user-friendly
+- Include examples where helpful
+- Provide troubleshooting guidance
+
+【Quality Gates】
+
+Before completing, verify that:
+✓ All previously untested modules now have corresponding test files
+✓ All test files are saved in the tests/ directory
+✓ report.json accurately lists all untested modules with correct information
+✓ auto_test.py successfully discovers and runs all tests
+✓ auto_test.py correctly excludes tests/ from coverage measurement
+✓ auto_test.py targets only the app/ directory for coverage
+✓ logs/test_run.log is created and contains test results
+✓ README.md provides complete and accurate documentation
+✓ All tests pass without failures (100% pass rate)
+✓ Coverage reports are generated successfully in htmlcov/
+✓ Console output confirms successful test execution
+✓ No syntax errors or runtime errors in any generated files
+
+【Critical Compliance Instructions】
+- Execute ALL steps in sequence without stopping for user confirmation
+- When test failures occur, analyze and fix them immediately - do not stop or ask for permission
+- The coverage measurement MUST exclude the tests/ directory and MUST only measure coverage of the app/ source code
+- Continue execution until all tests pass successfully and all deliverables are complete
+- Generate all required files and execute the test suite in a single operation
