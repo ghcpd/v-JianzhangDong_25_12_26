@@ -1,0 +1,129 @@
+======================================================================
+TEST EXECUTION AND COVERAGE REPORT
+======================================================================
+
+Command: D:\python\python.exe -m pytest tests/ --cov=app --cov-report=term-missing --cov-report=html:htmlcov -v
+
+----------------------------------------------------------------------
+OUTPUT:
+----------------------------------------------------------------------
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-7.4.0, pluggy-1.6.0 -- D:\python\python.exe
+cachedir: .pytest_cache
+rootdir: D:\projects\v-JianzhangDong_25_12_26\Claude-haiku-4.5\v-JianzhangDong_25_12_26
+plugins: cov-4.1.0
+collecting ... collected 73 items
+
+tests/test_auth.py::TestAuth::test_invalid_token PASSED                  [  1%]
+tests/test_auth.py::TestAuth::test_missing_token PASSED                  [  2%]
+tests/test_auth.py::TestAuth::test_valid_token PASSED                    [  4%]
+tests/test_config.py::TestConfig::test_default_env PASSED                [  5%]
+tests/test_config.py::TestConfig::test_is_production PASSED              [  6%]
+tests/test_discount.py::TestDiscount::test_apply_discount_large_price PASSED [  8%]
+tests/test_discount.py::TestDiscount::test_apply_discount_no_level PASSED [  9%]
+tests/test_discount.py::TestDiscount::test_apply_discount_regular_user PASSED [ 10%]
+tests/test_discount.py::TestDiscount::test_apply_discount_staff PASSED   [ 12%]
+tests/test_discount.py::TestDiscount::test_apply_discount_staff_decimal PASSED [ 13%]
+tests/test_discount.py::TestDiscount::test_apply_discount_vip PASSED     [ 15%]
+tests/test_discount.py::TestDiscount::test_apply_discount_vip_decimal PASSED [ 16%]
+tests/test_discount.py::TestDiscount::test_apply_discount_zero_price PASSED [ 17%]
+tests/test_errors.py::TestErrors::test_app_error_is_exception PASSED     [ 19%]
+tests/test_errors.py::TestErrors::test_app_error_message PASSED          [ 20%]
+tests/test_errors.py::TestErrors::test_auth_error_is_app_error PASSED    [ 21%]
+tests/test_errors.py::TestErrors::test_auth_error_is_exception PASSED    [ 23%]
+tests/test_errors.py::TestErrors::test_auth_error_message PASSED         [ 24%]
+tests/test_errors.py::TestErrors::test_auth_error_raising PASSED         [ 26%]
+tests/test_errors.py::TestErrors::test_error_raising PASSED              [ 27%]
+tests/test_errors.py::TestErrors::test_repository_error_is_app_error PASSED [ 28%]
+tests/test_errors.py::TestErrors::test_repository_error_is_exception PASSED [ 30%]
+tests/test_errors.py::TestErrors::test_repository_error_message PASSED   [ 31%]
+tests/test_errors.py::TestErrors::test_repository_error_raising PASSED   [ 32%]
+tests/test_errors.py::TestErrors::test_validation_error_is_app_error PASSED [ 34%]
+tests/test_errors.py::TestErrors::test_validation_error_is_exception PASSED [ 35%]
+tests/test_errors.py::TestErrors::test_validation_error_message PASSED   [ 36%]
+tests/test_errors.py::TestErrors::test_validation_error_raising PASSED   [ 38%]
+tests/test_logger.py::TestLogger::test_get_logger_returns_instance PASSED [ 39%]
+tests/test_logger.py::TestLogger::test_get_logger_same_instance PASSED   [ 41%]
+tests/test_order_service.py::TestOrderService::test_create_and_get_order PASSED [ 42%]
+tests/test_order_service.py::TestOrderService::test_create_order_invalid_price PASSED [ 43%]
+tests/test_permissions.py::TestPermissions::test_admin_has_all_permissions PASSED [ 45%]
+tests/test_permissions.py::TestPermissions::test_admin_with_unknown_action PASSED [ 46%]
+tests/test_permissions.py::TestPermissions::test_case_sensitivity PASSED [ 47%]
+tests/test_permissions.py::TestPermissions::test_guest_cannot_delete PASSED [ 49%]
+tests/test_permissions.py::TestPermissions::test_guest_cannot_read PASSED [ 50%]
+tests/test_permissions.py::TestPermissions::test_guest_cannot_write PASSED [ 52%]
+tests/test_permissions.py::TestPermissions::test_unknown_action PASSED   [ 53%]
+tests/test_permissions.py::TestPermissions::test_unknown_role_has_no_permissions PASSED [ 54%]
+tests/test_permissions.py::TestPermissions::test_user_can_read PASSED    [ 56%]
+tests/test_permissions.py::TestPermissions::test_user_cannot_delete PASSED [ 57%]
+tests/test_permissions.py::TestPermissions::test_user_cannot_execute PASSED [ 58%]
+tests/test_permissions.py::TestPermissions::test_user_cannot_write PASSED [ 60%]
+tests/test_pricing.py::TestPricing::test_negative_price PASSED           [ 61%]
+tests/test_pricing.py::TestPricing::test_no_discount PASSED              [ 63%]
+tests/test_pricing.py::TestPricing::test_staff_discount PASSED           [ 64%]
+tests/test_pricing.py::TestPricing::test_vip_discount PASSED             [ 65%]
+tests/test_repository.py::TestRepository::test_get_missing_key PASSED    [ 67%]
+tests/test_repository.py::TestRepository::test_save_and_get PASSED       [ 68%]
+tests/test_user_service.py::TestUserService::test_create_and_get_user PASSED [ 69%]
+tests/test_user_service.py::TestUserService::test_create_user_invalid_email PASSED [ 71%]
+tests/test_utils.py::TestUtilsUtcNow::test_utc_now_iso_approximate_timestamp PASSED [ 72%]
+tests/test_utils.py::TestUtilsUtcNow::test_utc_now_iso_contains_t PASSED [ 73%]
+tests/test_utils.py::TestUtilsUtcNow::test_utc_now_iso_is_valid_iso_format PASSED [ 75%]
+tests/test_utils.py::TestUtilsUtcNow::test_utc_now_iso_returns_string PASSED [ 76%]
+tests/test_utils.py::TestUtilsUtcNow::test_utc_now_iso_uses_utcnow PASSED [ 78%]
+tests/test_utils.py::TestNormalizeEmail::test_normalize_email_already_normalized PASSED [ 79%]
+tests/test_utils.py::TestNormalizeEmail::test_normalize_email_leading_whitespace PASSED [ 80%]
+tests/test_utils.py::TestNormalizeEmail::test_normalize_email_lowercase PASSED [ 82%]
+tests/test_utils.py::TestNormalizeEmail::test_normalize_email_mixed_case PASSED [ 83%]
+tests/test_utils.py::TestNormalizeEmail::test_normalize_email_numeric PASSED [ 84%]
+tests/test_utils.py::TestNormalizeEmail::test_normalize_email_special_characters PASSED [ 86%]
+tests/test_utils.py::TestNormalizeEmail::test_normalize_email_strips_and_lowercase PASSED [ 87%]
+tests/test_utils.py::TestNormalizeEmail::test_normalize_email_strips_whitespace PASSED [ 89%]
+tests/test_utils.py::TestNormalizeEmail::test_normalize_email_subdomain PASSED [ 90%]
+tests/test_utils.py::TestNormalizeEmail::test_normalize_email_tabs_and_newlines PASSED [ 91%]
+tests/test_utils.py::TestNormalizeEmail::test_normalize_email_trailing_whitespace PASSED [ 93%]
+tests/test_utils.py::TestNormalizeEmail::test_normalize_email_with_plus_sign PASSED [ 94%]
+tests/test_validators.py::TestValidators::test_validate_email_invalid PASSED [ 95%]
+tests/test_validators.py::TestValidators::test_validate_email_success PASSED [ 97%]
+tests/test_validators.py::TestValidators::test_validate_positive_int PASSED [ 98%]
+tests/test_validators.py::TestValidators::test_validate_positive_int_invalid PASSED [100%]
+
+============================== warnings summary ===============================
+tests/test_utils.py::TestUtilsUtcNow::test_utc_now_iso_approximate_timestamp
+tests/test_utils.py::TestUtilsUtcNow::test_utc_now_iso_contains_t
+tests/test_utils.py::TestUtilsUtcNow::test_utc_now_iso_is_valid_iso_format
+tests/test_utils.py::TestUtilsUtcNow::test_utc_now_iso_returns_string
+  D:\projects\v-JianzhangDong_25_12_26\Claude-haiku-4.5\v-JianzhangDong_25_12_26\app\utils.py:4: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    return datetime.utcnow().isoformat()
+
+tests/test_utils.py::TestUtilsUtcNow::test_utc_now_iso_approximate_timestamp
+  D:\projects\v-JianzhangDong_25_12_26\Claude-haiku-4.5\v-JianzhangDong_25_12_26\tests\test_utils.py:38: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    now = datetime.utcnow()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+
+---------- coverage: platform win32, python 3.14.0-final-0 -----------
+Name                   Stmts   Miss  Cover   Missing
+----------------------------------------------------
+app\__init__.py            1      0   100%
+app\auth.py                5      0   100%
+app\config.py              8      1    88%   12
+app\discount.py            6      0   100%
+app\errors.py              7      0   100%
+app\logger.py             12      0   100%
+app\order_service.py      12      0   100%
+app\permissions.py         6      0   100%
+app\pricing.py             6      0   100%
+app\repository.py         13      1    92%   9
+app\user_service.py       10      0   100%
+app\utils.py               5      0   100%
+app\validators.py         10      0   100%
+----------------------------------------------------
+TOTAL                    101      2    98%
+Coverage HTML written to dir htmlcov
+
+======================= 73 passed, 5 warnings in 0.36s ========================
+
+======================================================================
+Exit Code: 0
+======================================================================
