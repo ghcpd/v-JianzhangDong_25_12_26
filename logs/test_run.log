@@ -1,0 +1,62 @@
+Test run started: 2025-12-26T06:35:21.625558Z
+Command environment: D:\python\python.exe
+
+
+Running: D:\python\python.exe -m coverage run --source app -m pytest D:\projects\v-JianzhangDong_25_12_26\oswe-mini-m23a1s255\v-JianzhangDong_25_12_26\tests
+
+
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-7.4.0, pluggy-1.6.0
+rootdir: D:\projects\v-JianzhangDong_25_12_26\oswe-mini-m23a1s255\v-JianzhangDong_25_12_26
+plugins: cov-4.1.0
+collected 32 items
+
+tests\test_auth.py ...                                                   [  9%]
+tests\test_config.py ..                                                  [ 15%]
+tests\test_discount.py ....                                              [ 28%]
+tests\test_errors.py ..                                                  [ 34%]
+tests\test_logger.py ..                                                  [ 40%]
+tests\test_order_service.py ..                                           [ 46%]
+tests\test_permissions.py ...                                            [ 56%]
+tests\test_pricing.py ....                                               [ 68%]
+tests\test_repository.py ..                                              [ 75%]
+tests\test_user_service.py ..                                            [ 81%]
+tests\test_utils.py ..                                                   [ 87%]
+tests\test_validators.py ....                                            [100%]
+
+============================== warnings summary ===============================
+tests/test_utils.py::test_utc_now_iso_returns_parsable_recent_time
+  D:\projects\v-JianzhangDong_25_12_26\oswe-mini-m23a1s255\v-JianzhangDong_25_12_26\app\utils.py:4: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    return datetime.utcnow().isoformat()
+
+tests/test_utils.py::test_utc_now_iso_returns_parsable_recent_time
+  D:\projects\v-JianzhangDong_25_12_26\oswe-mini-m23a1s255\v-JianzhangDong_25_12_26\tests\test_utils.py:14: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    assert datetime.utcnow() - dt < timedelta(seconds=10)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 32 passed, 2 warnings in 0.39s ========================
+
+
+Generating coverage report: D:\python\python.exe -m coverage report --omit */tests/*
+
+
+Name                   Stmts   Miss  Cover
+------------------------------------------
+app\__init__.py            1      0   100%
+app\auth.py                5      0   100%
+app\config.py              8      1    88%
+app\discount.py            6      0   100%
+app\errors.py              7      0   100%
+app\logger.py             12      0   100%
+app\order_service.py      12      0   100%
+app\permissions.py         6      0   100%
+app\pricing.py             6      0   100%
+app\repository.py         13      1    92%
+app\user_service.py       10      0   100%
+app\utils.py               5      0   100%
+app\validators.py         10      0   100%
+------------------------------------------
+TOTAL                    101      2    98%
+
+
+Test run finished: 2025-12-26T06:35:24.132125Z

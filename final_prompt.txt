@@ -1,0 +1,35 @@
+You are an experienced test engineer. Your task is to generate tests for a Python project. Complete the following tasks:
+
+1. Detect any untested modules in the project. For each untested module, generate a corresponding test file and save it in the `tests/` folder. Each test file should have a unique name.
+2. Generate a `report.json` file listing all untested modules and their corresponding test files. Follow this structure:
+
+{
+  "problems": [
+    {
+      "id": "1",
+      "module_name": "example_module_1",
+      "file": "example_module_1.py",
+      "test_file": "test_example_module_1.py"
+    },
+    {
+      "id": "2",
+      "module_name": "example_module_2",
+      "file": "example_module_2.py",
+      "test_file": "test_example_module_1.py"
+    }
+  ]
+}
+
+3. Generate an `auto_test.py` file that:
+   - Discovers and runs all test files under the `tests/` folder using pytest.
+   - Calculates test coverage using `coverage.py`, but ONLY for the original source code
+     (explicitly exclude the `tests/` directory from coverage measurement).
+   - The coverage target should be the main project source directory (e.g., `src/`, `app/`, or project root modules),
+     not the test code itself.
+   - Writes the final coverage result into `logs/test_run.log`.
+   - Creates the `logs/` directory if it does not exist.
+
+4. Generate a `README.md` file that:
+   - Provides an overview of all generated files and their purpose.
+   - Explains how to check coverage logs in `logs/test_run.log`.
+   - Describes how to run `auto_test.py`.
